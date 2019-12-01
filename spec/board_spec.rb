@@ -55,22 +55,22 @@ RSpec.describe Board do
 
     it 'returns error when bomb x coordinate less than zero' do
       board = Board.new
-      expect{ board.add_bomb(x: -1, y: 0) }.to raise_error
+      expect{ board.add_bomb(x: -1, y: 0) }.to raise_error(Board::BombOutsideBoardError)
     end
 
     it 'returns error when bomb x coordinate greater than board size' do
       board = Board.new
-      expect{ board.add_bomb(x: 9, y: 0) }.to raise_error
+      expect{ board.add_bomb(x: 9, y: 0) }.to raise_error(Board::BombOutsideBoardError)
     end
 
     it 'returns error when bomb y coordinate less than zero' do
       board = Board.new
-      expect{ board.add_bomb(x: 0, y: -1) }.to raise_error
+      expect{ board.add_bomb(x: 0, y: -1) }.to raise_error(Board::BombOutsideBoardError)
     end
 
     it 'returns error when bomb y coordinate greater than board size' do
       board = Board.new
-      expect{ board.add_bomb(x: 0, y: 9) }.to raise_error
+      expect{ board.add_bomb(x: 0, y: 9) }.to raise_error(Board::BombOutsideBoardError)
     end
   end
 
