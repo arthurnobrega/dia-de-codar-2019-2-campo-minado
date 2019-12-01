@@ -159,5 +159,18 @@ RSpec.describe Board do
         "---------\n"
       )
     end
+
+    it 'prints 3x3 board with bombs' do
+      board = Board.new(rows: 3, columns: 3)
+      board.add_bomb(x: 0, y: 1)
+      board.add_bomb(x: 1, y: 1)
+      expect(board.to_s).to eq(
+        "-------------\n" +
+        "| 2 | * | 2 |\n" +
+        "| 2 | * | 2 |\n" +
+        "| 1 | 1 | 1 |\n" +
+        "-------------\n"
+      )
+    end
   end
 end
