@@ -78,6 +78,13 @@ RSpec.describe Board do
       board.add_bomb(x: 0, y: 0)
       expect(board.bombs).to eq([[0, 0]])
     end
+
+    it 'adds two bombs' do
+      board = Board.new
+      board.add_bomb(x: 0, y: 0)
+      board.add_bomb(x: 5, y: 3)
+      expect(board.bombs).to eq([[0, 0], [5, 3]])
+    end
   end
 
   describe '#to_s' do
