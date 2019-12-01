@@ -1,5 +1,6 @@
 class Board
   class BombOutsideBoardError < StandardError; end
+  class CellOutsideBoardError < StandardError; end
 
   def initialize(rows: 8, columns: 8)
     @rows = rows
@@ -30,11 +31,7 @@ class Board
     @rows.times.each do |row_index|
       row = []
       @columns.times.each do |column_index|
-        if @bombs.include?([row_index, column_index])
-          row.append('*')
-        else
-          row.append(0)
-        end
+        row.append(get_cell(x: row_index, y: column_index))
       end
 
       result.append(row)
@@ -51,5 +48,25 @@ class Board
     result += '-' * (@columns * 4 + 1) + "\n"
 
     result
+  end
+
+  private
+
+  def get_cell(x:, y:)
+    raise CellOutsideBoardError.new if x < 0 || x > @rows - 1 || y < 0 || y > @columns - 1
+
+    return '*' if @bombs.include?([x, y])
+    
+    number_of_bombs = 0
+    number_of_bombs += 1 if @bombs.include?([x - 1, y - 1])
+    number_of_bombs += 1 if @bombs.include?([x - 1, y])
+    number_of_bombs += 1 if @bombs.include?([x - 1, y + 1])
+    number_of_bombs += 1 if @bombs.include?([x, y - 1])
+    number_of_bombs += 1 if @bombs.include?([x, y + 1])
+    number_of_bombs += 1 if @bombs.include?([x + 1, y - 1])
+    number_of_bombs += 1 if @bombs.include?([x + 1, y])
+    number_of_bombs += 1 if @bombs.include?([x + 1, y + 1])
+
+    return number_of_bombs
   end
 end
