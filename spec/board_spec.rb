@@ -72,6 +72,12 @@ RSpec.describe Board do
       board = Board.new
       expect{ board.add_bomb(x: 0, y: 9) }.to raise_error(Board::BombOutsideBoardError)
     end
+
+    it 'adds a bomb' do
+      board = Board.new
+      board.add_bomb(x: 0, y: 0)
+      expect(board.bombs).to eq([[0, 0]])
+    end
   end
 
   describe '#to_s' do

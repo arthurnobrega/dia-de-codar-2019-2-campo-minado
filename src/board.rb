@@ -16,11 +16,12 @@ class Board
   end
 
   def bombs
-    @columns
+    @bombs
   end
 
   def add_bomb(x:, y:)
     raise BombOutsideBoardError.new if x < 0 || x > @rows - 1 || y < 0 || y > @columns - 1
+    @bombs.append([x, y])
   end
 
   def to_s
