@@ -40,6 +40,13 @@ RSpec.describe Board do
     end
   end
 
+  describe '#bombs' do
+    it 'responds to #bombs' do
+      board = Board.new
+      expect(board).to respond_to(:bombs)
+    end
+  end
+
   describe '#to_s' do
     it 'responds to #to_s' do
       board = Board.new

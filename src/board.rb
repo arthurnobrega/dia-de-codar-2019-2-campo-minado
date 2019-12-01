@@ -1,7 +1,8 @@
 class Board
-  def initialize(rows: 8, columns: 8)
+  def initialize(rows: 8, columns: 8, bombs:[])
     @rows = rows
     @columns = columns
+    @bombs = bombs
   end
 
   def rows
@@ -10,6 +11,10 @@ class Board
 
   def columns
     @columns
+  end
+
+  def bombs
+    @bombs
   end
 
   def to_s
