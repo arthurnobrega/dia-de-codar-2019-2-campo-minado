@@ -92,6 +92,14 @@ RSpec.describe Board do
       board = Board.new
       expect(board).to respond_to(:to_a)
     end
+
+    it 'returns board matrix as array' do
+      board = Board.new(rows: 2, columns: 2)
+      expect(board.to_a).to eq([
+        [0, 0],
+        [0, 0]
+      ])
+    end
   end
 
   describe '#to_s' do

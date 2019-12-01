@@ -25,6 +25,22 @@ class Board
   end
 
   def to_a
+    result = []
+
+    @rows.times.each do |row_index|
+      row = []
+      @columns.times.each do |column_index|
+        if @bombs.include?([row_index, column_index])
+          row.append('*')
+        else
+          row.append(0)
+        end
+      end
+
+      result.append(row)
+    end
+
+    result
   end
 
   def to_s
