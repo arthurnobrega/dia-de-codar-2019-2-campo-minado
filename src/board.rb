@@ -24,6 +24,9 @@ class Board
     @bombs.append([x, y])
   end
 
+  def to_a
+  end
+
   def to_s
     result = '-' * (@columns * 4 + 1) + "\n"
     @rows.times.each do |i|
