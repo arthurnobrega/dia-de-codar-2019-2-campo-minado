@@ -16,6 +16,11 @@ RSpec.describe Board do
     expect(board.rows).to equal(8)
   end
 
+  it 'changes default number of rows' do
+    board = Board.new(rows: 10)
+    expect(board.rows).to equal(10)
+  end
+
   it 'responds to #columns' do
     board = Board.new
     expect(board).to respond_to(:columns)
