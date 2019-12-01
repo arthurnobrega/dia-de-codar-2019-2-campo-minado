@@ -11,4 +11,12 @@ class Board
   def columns
     @columns
   end
+
+  def to_s
+    "---------\n" +
+    "| 0 | 0 |\n" +
+    "| 0 | 0 |\n" +
+    "| 0 | 0 |\n" +
+    "---------\n"
+  end
 end

@@ -45,5 +45,16 @@ RSpec.describe Board do
       board = Board.new
       expect(board).to respond_to(:to_s)
     end
+
+    it 'prints the board without bombs' do
+      board = Board.new(rows: 2, columns: 2)
+      expect(board.to_s).to eq(
+        "---------\n" +
+        "| 0 | 0 |\n" +
+        "| 0 | 0 |\n" +
+        "| 0 | 0 |\n" +
+        "---------\n"
+      )
+    end
   end
 end
