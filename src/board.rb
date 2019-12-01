@@ -13,10 +13,12 @@ class Board
   end
 
   def to_s
-    "---------\n" +
-    "| 0 | 0 |\n" +
-    "| 0 | 0 |\n" +
-    "| 0 | 0 |\n" +
-    "---------\n"
+    result = '-' * (@columns * 4 + 1) + "\n"
+    (1..@rows).each do |i|
+      result += '| 0 ' * @columns + "|\n"
+    end
+    result += '-' * (@columns * 4 + 1) + "\n"
+
+    result
   end
 end

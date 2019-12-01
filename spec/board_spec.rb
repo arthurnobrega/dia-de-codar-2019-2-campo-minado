@@ -46,14 +46,24 @@ RSpec.describe Board do
       expect(board).to respond_to(:to_s)
     end
 
-    it 'prints the board without bombs' do
+    it 'prints 2x2 board without bombs' do
       board = Board.new(rows: 2, columns: 2)
       expect(board.to_s).to eq(
         "---------\n" +
         "| 0 | 0 |\n" +
         "| 0 | 0 |\n" +
-        "| 0 | 0 |\n" +
         "---------\n"
+      )
+    end
+
+    it 'prints 3x3 board without bombs' do
+      board = Board.new(rows: 3, columns: 3)
+      expect(board.to_s).to eq(
+        "-------------\n" +
+        "| 0 | 0 | 0 |\n" +
+        "| 0 | 0 | 0 |\n" +
+        "| 0 | 0 | 0 |\n" +
+        "-------------\n"
       )
     end
   end
