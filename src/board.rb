@@ -1,8 +1,8 @@
 class Board
-  def initialize(rows: 8, columns: 8, bombs:[])
+  def initialize(rows: 8, columns: 8)
     @rows = rows
     @columns = columns
-    @bombs = bombs
+    @bombs = []
   end
 
   def rows
@@ -14,7 +14,11 @@ class Board
   end
 
   def bombs
-    @bombs
+    @columns
+  end
+
+  def add_bomb(x:, y:)
+    raise "Bomb outside board" if x < 0 || x > @rows - 1 || y < 0 || y > @columns - 1
   end
 
   def to_s
