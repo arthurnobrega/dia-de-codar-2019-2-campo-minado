@@ -19,7 +19,7 @@ class Board
 
   def to_s
     result = '-' * (@columns * 4 + 1) + "\n"
-    (1..@rows).each do |i|
+    @rows.times.each do |i|
       result += '| 0 ' * @columns + "|\n"
     end
     result += '-' * (@columns * 4 + 1) + "\n"
