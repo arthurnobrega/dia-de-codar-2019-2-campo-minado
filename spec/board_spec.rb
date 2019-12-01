@@ -52,6 +52,11 @@ RSpec.describe Board do
       board = Board.new
       expect(board).to respond_to(:add_bomb)
     end
+
+    it 'returns error when bomb outside board' do
+      board = Board.new
+      expect{ board.add_bomb(x: 10, y: 0) }.to raise_error
+    end
   end
 
   describe '#to_s' do
