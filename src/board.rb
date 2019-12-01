@@ -1,6 +1,7 @@
 class Board
-  def initialize(rows: 8)
+  def initialize(rows: 8, columns: 8)
     @rows = rows
+    @columns = columns
   end
 
   def rows
@@ -8,5 +9,6 @@ class Board
   end
 
   def columns
+    @columns
   end
 end

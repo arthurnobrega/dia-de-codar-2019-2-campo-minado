@@ -25,4 +25,14 @@ RSpec.describe Board do
     board = Board.new
     expect(board).to respond_to(:columns)
   end
+
+  it 'has 8 columns by default' do
+    board = Board.new
+    expect(board.columns).to equal(8)
+  end
+
+  it 'changes default number of columns' do
+    board = Board.new(columns: 10)
+    expect(board.columns).to equal(10)
+  end
 end
