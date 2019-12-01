@@ -109,6 +109,16 @@ RSpec.describe Board do
         [1, 1]
       ])
     end
+
+    it 'returns board matrix as array with two bombs' do
+      board = Board.new(rows: 2, columns: 2)
+      board.add_bomb(x: 0, y: 0)
+      board.add_bomb(x: 1, y: 1)
+      expect(board.to_a).to eq([
+        ['*', 2],
+        [2, '*']
+      ])
+    end
   end
 
   describe '#to_s' do
