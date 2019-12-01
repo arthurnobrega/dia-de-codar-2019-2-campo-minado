@@ -6,8 +6,15 @@ RSpec.describe Board do
     expect(board).to be_kind_of(Board)
   end
 
-  it '#rows' do
-    board = Board.new
-    expect(board).to respond_to(:rows)
+  describe 'test methods' do
+    it 'responds to #rows' do
+      board = Board.new
+      expect(board).to respond_to(:rows)
+    end
+
+    it 'responds to #columns' do
+      board = Board.new
+      expect(board).to respond_to(:columns)
+    end
   end
 end
