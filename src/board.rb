@@ -42,8 +42,11 @@ class Board
 
   def to_s
     result = '-' * (@columns * 4 + 1) + "\n"
-    @rows.times.each do |i|
-      result += '| 0 ' * @columns + "|\n"
+    @rows.times.each do |row_index|
+      @columns.times.each do |column_index|
+        result += '| ' + get_cell(x: row_index, y: column_index).to_s + ' '
+      end
+      result += "|\n"
     end
     result += '-' * (@columns * 4 + 1) + "\n"
 
