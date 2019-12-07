@@ -13,8 +13,17 @@ class Board
   end
 
   def to_array
-    arr = [[1,1],
-          [1,1]]
+    result = []
+
+    @rows.times do |i|
+      row = []
+      @columns.times do |j|
+        row.append(1)
+      end
+      result.append(row)
+    end
+
+    result
   end
 
 end
