@@ -11,4 +11,10 @@ class Board
   def columns
     @columns
   end
+
+  def to_array
+    arr = [[1,1],
+          [1,1]]
+  end
+
 end
