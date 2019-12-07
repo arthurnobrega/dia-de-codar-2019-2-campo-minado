@@ -18,7 +18,7 @@ class Board
     @rows.times do |i|
       row = []
       @columns.times do |j|
-        row.append(1)
+        row.append('.')
       end
       result.append(row)
     end

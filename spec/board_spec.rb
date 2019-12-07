@@ -18,8 +18,8 @@ RSpec.describe 'Board' do
   it 'initializes board with array' do
     board = Board.new(2,2)
     arr = [
-      [1,1],
-      [1,1]
+      ['.','.'],
+      ['.','.']
     ]
     expect(board.to_array).to eq arr
   end
@@ -27,10 +27,10 @@ RSpec.describe 'Board' do
   it 'initializes board with array 4x5' do
     board = Board.new(4,5)
     arr = [
-      [1,1,1,1,1],
-      [1,1,1,1,1],
-      [1,1,1,1,1],
-      [1,1,1,1,1]
+      ['.','.','.','.','.'],
+      ['.','.','.','.','.'],
+      ['.','.','.','.','.'],
+      ['.','.','.','.','.']
     ]
     expect(board.to_array).to eq arr
   end
