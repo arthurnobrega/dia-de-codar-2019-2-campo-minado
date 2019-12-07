@@ -34,4 +34,14 @@ RSpec.describe 'Board' do
     ]
     expect(board.to_array).to eq arr
   end
+
+  it 'initializes board with array bomb' do
+    board = Board.new(2,2)
+    arr = [
+      ['.','.'],
+      ['.','*']
+    ]
+    board.add_bomb(1,1)
+    expect(board.to_array).to eq arr
+  end
 end
